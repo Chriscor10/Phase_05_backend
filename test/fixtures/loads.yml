@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  container_size: MyString
+  load_weight: MyString
+  origin: MyString
+  destination: MyString
+  price: 1
+  pickup_time: MyString
+  dropoff_time: MyString
+  pickup_date: MyString
+  dropoff_date: MyString
+  shipper: one
+
+two:
+  container_size: MyString
+  load_weight: MyString
+  origin: MyString
+  destination: MyString
+  price: 1
+  pickup_time: MyString
+  dropoff_time: MyString
+  pickup_date: MyString
+  dropoff_date: MyString
+  shipper: two
