@@ -1,4 +1,6 @@
 class LoadsController < ApplicationController
+
+
     def index 
         loads = Load.all
         render json: loads
@@ -11,7 +13,7 @@ class LoadsController < ApplicationController
 
     def create
         loads = Load.create!(loads_params)
-        render json: loads, status: created
+        render json: loads, status: :created
     end
 
     def update
@@ -38,6 +40,6 @@ class LoadsController < ApplicationController
              :dropoff_time,
             :pickup_date,
              :dropoff_date,
-            :shipper,)
+            :shipper_id,)
     end
 end

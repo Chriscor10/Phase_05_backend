@@ -1,4 +1,4 @@
 class Load < ApplicationRecord
   belongs_to :shipper
-  belongs_to :carrier
+  delegate :carrier, to: :shipper, allow_nil: true
 end
