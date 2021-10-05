@@ -29,6 +29,6 @@ class ShippersController < ApplicationController
     private
 
     def shipper_params
-        params.permit(:company_name, :email)
+        params.permit(:company_name, :email, :password_digest )
     end
 end

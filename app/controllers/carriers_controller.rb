@@ -30,6 +30,6 @@ class CarriersController < ApplicationController
     private
 
     def carrier_params
-        params.permit(:carrier_name, :email)
+        params.permit(:carrier_name, :email, :password_digest)
       end
 end

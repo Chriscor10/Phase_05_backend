@@ -3,7 +3,7 @@ class LoadsController < ApplicationController
 
     def index 
         loads = Load.all
-        render json: loads
+        render json: loads, include: :shipper
     end
 
     def show
