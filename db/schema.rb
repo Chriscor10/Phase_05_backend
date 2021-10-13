@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_29_003117) do
+ActiveRecord::Schema.define(version: 2021_10_13_015739) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,15 @@ ActiveRecord::Schema.define(version: 2021_09_29_003117) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["carrier_id"], name: "index_carrier_loads_on_carrier_id"
     t.index ["load_id"], name: "index_carrier_loads_on_load_id"
+  end
+
+  create_table "carrierloads", force: :cascade do |t|
+    t.bigint "carrier_id", null: false
+    t.bigint "load_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["carrier_id"], name: "index_carrierloads_on_carrier_id"
+    t.index ["load_id"], name: "index_carrierloads_on_load_id"
   end
 
   create_table "carriers", force: :cascade do |t|
@@ -58,5 +67,7 @@ ActiveRecord::Schema.define(version: 2021_09_29_003117) do
 
   add_foreign_key "carrier_loads", "carriers"
   add_foreign_key "carrier_loads", "loads"
+  add_foreign_key "carrierloads", "carriers"
+  add_foreign_key "carrierloads", "loads"
   add_foreign_key "loads", "shippers"
 end
