@@ -8,7 +8,7 @@ class LoadsController < ApplicationController
 
     def show
         loads = Load.find_by(loads_params[:id])
-        render json: loads
+        render json: loads, include: :shipper
     end
 
     def create
@@ -40,6 +40,6 @@ class LoadsController < ApplicationController
              :dropoff_time,
             :pickup_date,
              :dropoff_date,
-            :shipper_id,)
+            :shipper_id)
     end
 end

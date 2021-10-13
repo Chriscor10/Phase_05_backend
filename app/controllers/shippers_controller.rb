@@ -1,12 +1,12 @@
 class ShippersController < ApplicationController
     def index 
         shipper = Shipper.all
-        render json: shipper
+        render json: shipper, include: :loads
     end
 
     def show
         shipper = Shipper.find_by(shipper_params[:id])
-        render json: shipper
+        render json: shipper, include: :loads
     end
 
     def create
